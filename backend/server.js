@@ -21,7 +21,7 @@ app.get('/todos', (_, res) => {
         .then(dataBuffer => {
             const todos = JSON.parse(dataBuffer);
 
-            res.status(OK).json(todos)
+            res.status(OK).json(todos)//Wahlweise --> .json({succes:true,result:todos}); zu beachten beim , z.B state aktualisieren mit:(todos.result) ohne:(todos)
         })
         .catch(err => {
             console.error(err);
