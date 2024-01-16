@@ -1,0 +1,28 @@
+.todo-item.completed {
+    text-decoration: line-through;
+    color: grey;
+  }
+  .todo-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .todo-text {
+    flex-grow: 1;
+  }
+  
+  
+  button {
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
