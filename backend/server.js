@@ -21,7 +21,7 @@ app.get('/todos', (_, res) => {
         .then(dataBuffer => {
             const todos = JSON.parse(dataBuffer);
 
-            res.status(OK).json({ success: true, result: todos })
+            res.status(OK).json(todos)
         })
         .catch(err => {
             console.error(err);
@@ -51,7 +51,7 @@ app.post('/todos', (req, res) => {
         })
         .then(newTodo => {
             // Senden des neu erstellten Todo-Objekts als Antwort an den Client
-            res.status(CREATED).json({ succes: true, result: newTodo });
+            res.status(CREATED).json(newTodo);//({ success: true, result: newTodo });
         })
         .catch(err => {
             // Fehlerbehandlung für den Fall, dass beim Lesen oder Schreiben ein Fehler auftritt
@@ -87,7 +87,7 @@ app.patch('/todos/:id', (req, res) => {
         })
         .then(updatedTodo => {
             // Senden des aktualisierten Todo-Objekts als Antwort an den Client
-            res.status(OK).json({ success: true, result: updatedTodo });
+            res.status(OK).json(updatedTodo);//({ success: true, result: updatedTodo });
         })
         .catch(err => {
             console.error(err);

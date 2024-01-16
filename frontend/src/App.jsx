@@ -28,7 +28,7 @@ function App() {
     })
     .then(data => {
       // Fügt das neue Todo zum State hinzu
-      setTodos([...todos, data.result]); 
+      setTodos([...todos, data]); 
     })
     .catch(error => console.error('Error:', error));
   };
@@ -55,7 +55,7 @@ function App() {
     .then(data => {
       // Aktualisiert das Todo im State
       setTodos(todos.map(item =>
-        item.id === id ? { ...item, ...data.result } : item
+        item.id === id ? { ...item, ...data } : item
       ));
     })
     .catch(error => console.error('Error:', error));
@@ -86,7 +86,7 @@ function App() {
         }
         throw new Error('Netzwerkantwort war nicht ok.');
       })
-      .then(data => setTodos(data.result))
+      .then(data => setTodos(data))
       .catch(error => {
         console.error('Error:', error);
       });
